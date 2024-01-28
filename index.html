@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="./img/logo.png"> 
+    <title>Yummy</title></head>
+<body class="bg-black">
+
+    <!-- loader -->
+    <div class="loading d-none">
+        <span class="loader"></span>
+     </div>
+
+    <!-- side navbar -->
+    <div class="vh-100 position-fixed d-flex align-items-center z-1">      
+        <div class="menu bg-black">
+            <div class="d-flex text-white flex-column vh-100 mx-4 ">
+
+            <div class="my-3" id="links">
+                <ul class="list-unstyled overflow-hidden">
+                    <div class="my-3">
+                    <li data-api="none" role="button" class="text-decoration-none position-relative text-white">Search</li>
+                    </div>
+        
+                    <div class="my-3">
+                    <li data-api="categories.php" role="button" class="text-decoration-none position-relative text-white">Categories</li>
+                    </div>
+        
+                    <div class="my-3">
+                    <li data-api="list.php?a=list" role="button" class="text-decoration-none position-relative text-white">Area</li>
+                    </div>
+        
+                    <div class="my-3">
+                    <li data-api="list.php?i=list" role="button" class="text-decoration-none position-relative text-white">Ingredients</li>
+                    </div>
+        
+                    <div class="my-3">
+                    <li data-api="none" role="button" class="text-decoration-none position-relative text-white">Contact-Us</li>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="mt-auto mb-4">
+                <div>
+                    <i class="cursor fa-brands fa-facebook"></i>
+                    <i class="cursor fa-brands fa-twitter"></i>
+                    <i class="cursor fa-solid fa-globe"></i>
+                </div>
+                <p>Copyright Â© 2019 All Rights </br>Reserved.</p>
+            </div>
+
+        </div>
+        </div>
+
+        <!-- open-close bar -->
+        <div class="px-2 py-4 vh-100 bg-white text-black d-flex flex-column text-center">
+            <div class="icon"><img src="./img/logo.png" alt="" class="logo"></div>
+            <div id="open-close" class="m-auto" role="button"><i id="iconToggle" class="fa-solid fa-bars fa-2xl"></i></div>
+            <div class="links ">
+                <div><i class="cursor fa-solid fa-globe "></i></div>
+                <div><i class="cursor fa-solid fa-share-nodes"></i></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- end side navbar  -->
+
+    <!-- search section -->
+    <section id="Search" class="pt-3 d-none">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 g-4 w-75 m-auto mb-2">
+                <div class="col">
+                    <input id="searchByName" type="text" placeholder="Search By Name" class="form-control w-100 bg-transparent text-white">
+                </div>
+
+                <div class="col">
+                    <input id="searchByFirstLitter" type="text" placeholder="Search By First Letter" class="form-control w-100 bg-transparent text-white">
+                </div> 
+            </div>
+        </div>
+    </section>
+
+    <!-- WHEN START --> 
+    <main class="py-3">
+        <div class="container">
+            <div id="displayMealsMain" class="row row-cols-1 row-cols-md-4 g-4 my-3">
+                <!-- display Meals -->
+            </div>
+        </div>
+    </main>
+
+    <!-- categories section-->
+    <section id="Categories" class="py-5 d-none">
+        <div class="container">
+            <div id="displayList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+            <!-- display categories -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Area section-->
+    <section id="Area" class="py-5 d-none">
+        <div class="container">
+            <div id="displayArea" class="row row-cols-2 row-cols-md-4 row-cols-lg-6 row-cols-xl-6 g-4">
+                <!-- display areas -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Ing section-->
+    <section id="Ingredients" class="py-5 d-none">
+        <div class="container">
+            <div id="displayIng" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                <!-- display ingredients -->
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section-->
+    <section id="Contact-Us" class="py-5 d-none">
+        <div class="container w-75">
+                <form class="row g-3 my-4 row-cols-1 mx-auto">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 g-4">
+
+                        <div class="col">
+                        <div class="form-data">
+                            <input type="text" id="name" class="form-control" placeholder="Enter Your Name" />
+                            <ul class="alert alert-danger p-0 invalid-feedback list-unstyled">
+                                <li>minimum 2 characters</li>
+                                <li>Special characters and numbers not allowed</li>
+                            </ul>
+                        </div>
+                        </div>
+
+                        <div class="col">
+                        <div class="form-data">
+                            <input type="email" id="email" class="form-control" placeholder="Enter Your Email" />
+                            <ul class="alert alert-danger p-0 invalid-feedback list-unstyled">
+                                <li>Email not valid *exemple@yyy.zzz</li>
+                            </ul>
+                        </div>
+                        </div>
+
+                        <div class="col">
+                        <div class="form-data">
+                            <input type="number" id="phone" class="form-control" placeholder="Enter Your Phone Number" />
+                            <ul class="alert alert-danger p-0 invalid-feedback list-unstyled ">
+                                <li>Enter valid Phone Number</li>
+                            </ul>
+                        </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-data">
+                                <input type="number" id="age" class="form-control" placeholder="Enter Age" />
+                                <ul class="alert alert-danger p-0 invalid-feedback list-unstyled">
+                                <li>Enter valid age</li>
+                                <li>Minimum 10 Maxmum 80</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-data">
+                                <input type="password" id="password" class="form-control" placeholder="Enter Your password" />
+                                <ul class="alert alert-danger p-0 invalid-feedback list-unstyled">
+                                <li>Enter valid password *Minimum eight characters, at least one letter and one number:*</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-data">
+                                <input type="password" id="re-password" class="form-control" placeholder="Enter Your password" />
+                                <ul class="alert alert-danger p-0 invalid-feedback list-unstyled">
+                                <li>Passwords do not match</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-auto btn mx-auto mt-5 mb-2 disabled" id="submit">submit</button>
+                    <p id="msg" class="text-center text-success d-none"> success !!</p>
+                 </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="instructionsContainer" class="d-none">
+        <div class="container text-white">
+            <div class="row" id="Instructions" >
+               <!-- display Instructions -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js" ></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

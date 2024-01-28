@@ -1,0 +1,95 @@
+.cursor{
+    cursor: pointer;
+}
+/* side navbar */
+.menu{
+    white-space: nowrap;
+    overflow: hidden;
+    display: none;
+}
+.logo{
+    width: 50px;
+}
+.menu #links ul li{
+    top: 300px;
+}
+/* end side navbar */
+
+
+/* display data */
+.imgContainer{
+    overflow: hidden;
+}
+.picFade{
+    background-color: #f9f6f6ca;
+    transition: all 0.5s;
+}
+.imgContainer:hover .picFade{
+    transform: translateY(-100%);
+}
+/* end data display */
+
+/* search section */
+.form-control::placeholder {
+    color: gray ;
+    opacity: 0.9;
+}
+
+/* contact section */
+#Contact-Us form button{
+    background-color: transparent ;
+    color: #DC3545;
+    border: 2px solid #DC3545;
+    transition: all 0.5s ;
+}
+#Contact-Us form button:hover{
+    background-color: #DC3545 ;
+    color: white;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+   appearance: none;
+   display: none;
+}
+
+/* loader */
+.loading {
+    position: fixed;
+    z-index: 999999;
+    inset: 0;
+    background-color: #000000d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #FFF;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border-left: 4px solid #f9d800;
+    border-bottom: 4px solid transparent;
+    animation: rotation 0.5s linear infinite reverse;
+  }
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
