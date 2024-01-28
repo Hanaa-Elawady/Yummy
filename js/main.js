@@ -96,7 +96,7 @@ async function getMeals(api , x){
     loader.classList.remove('d-none');
 
     let apiData; 
-    if(api =="none"){
+    if(api =="https://www.themealdb.com/api/json/v1/1/none"){//clickon search or contact
         displayMealsMain.innerHTML="";
     }else{
         const apiResponse =await fetch(`${api}`);
@@ -120,6 +120,9 @@ async function getMeals(api , x){
 
 // display Meals
 function displayMeals(data){
+    if(data == null || data == undefined){
+        displayMealsMain.innerHTML='<p class="text-center text-white mx-auto">no meals by this name</p>';
+    }else{
     displayMealsMain.classList.remove('d-none');
     let cartona =``;
         for( let i =0 ; i < data.length ; i++ ){
@@ -136,6 +139,7 @@ function displayMeals(data){
         </div>
         `}
     displayMealsMain.innerHTML=cartona;
+    }
 }
 
 // categorieeesssss
